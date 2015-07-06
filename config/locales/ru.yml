@@ -1,0 +1,26 @@
+ru:
+  update: 'Обновить'
+  create: 'Создать'
+  edit: 'Изменить'
+  delete: 'Удалить'
+  no_found: "%{name} не найдены"
+  tasks_name: 'Задачи'
+  logout: 'Выйти'
+  users:
+    profile:
+      create_new_task: 'Создать новую задачу'
+      title: 'Задачи'
+      need_perform: 'Пора сделать'
+      in_future: 'Запланнированные'
+      performed_tasks: 'Выполненные'
+    tasks:
+      mark_as_performed: 'Отметить выполненной'
+  tasks:
+    new:
+      title: 'Новая задача'
+    edit:
+      title: 'Изменение задачи'
+    form:
+      name: 'Название'
+      description: 'Описание'
+      start_date: 'Дата начала'

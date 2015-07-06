@@ -20,4 +20,29 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  update: 'Update'
+  create: 'Create'
+  edit: 'Edit'
+  delete: 'Delete'
+  no_found: "No %{name} found"
+  tasks_name: 'tasks'
+  logout: 'Logout'
+  users:
+    profile:
+      create_new_task: 'Create new task'
+      title: 'Your tasks'
+      need_perform: 'Need perform'
+      in_future: 'In future'
+      performed_tasks: 'Performed tasks'
+    tasks:
+      mark_as_performed: 'Mark as performed'
+  tasks:
+    new:
+      title: 'New Task'
+    edit:
+      title: 'Edit Task'
+    form:
+      name: 'Name'
+      description: 'Description'
+      start_date: 'Start date'      
+

@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title TasksNotifications
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    - if notice
+      div= notice
+
+    - if signed_in?
+      = current_user.name
+      | (
+      = link_to t(:logout), destroy_user_session_path, method: :delete
+      | )
+    = yield
