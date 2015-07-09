@@ -31,6 +31,11 @@ class TasksController < ApplicationController
     redirect_to profile_path
   end
 
+  def mark_as_performed
+    @task.save_as_performed
+    redirect_to :back
+  end
+
   private
 
   def set_task
@@ -38,7 +43,8 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:name, :description, :start_date, :status)
+    params.require(:task).permit(:name, :description, :start_date, :repeat_count, 
+      :every_minutes, :every_hours, :every_days, :every_months, :every_years)
   end
 
 end

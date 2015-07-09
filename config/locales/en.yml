@@ -45,4 +45,10 @@ en:
       name: 'Name'
       description: 'Description'
       start_date: 'Start date'      
+      repeat_every: 'Repeat every'
+      every_minutes: 'minutes'
+      every_hours: 'hours'
+      every_days: 'days'
+      every_months: 'months'
+      every_years: 'years'
 

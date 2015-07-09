@@ -11,18 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706101836) do
+ActiveRecord::Schema.define(version: 20150709070823) do
 
   create_table "tasks", force: :cascade do |t|
-    t.string   "name",            default: "", null: false
-    t.text     "description",     default: "", null: false
-    t.integer  "status",          default: 0,  null: false
-    t.datetime "repeat_interval"
-    t.integer  "repeat_count",    default: 1,  null: false
-    t.datetime "start_date",                   null: false
+    t.string   "name",          default: "", null: false
+    t.text     "description",   default: "", null: false
+    t.integer  "status",        default: 0,  null: false
+    t.integer  "repeat_count",  default: 0,  null: false
+    t.datetime "start_date",                 null: false
     t.integer  "user_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "every_minutes", default: 0
+    t.integer  "every_hours",   default: 0
+    t.integer  "every_days",    default: 0
+    t.integer  "every_months",  default: 0
+    t.integer  "every_years",   default: 0
   end
 
   create_table "users", force: :cascade do |t|

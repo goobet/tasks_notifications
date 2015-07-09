@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :tasks
+  resources :tasks do
+    member do
+      get 'mark_as_performed', as: :mark_as_performed
+    end
+  end
+
   devise_for :users
   root 'users#profile', as: :profile
   
