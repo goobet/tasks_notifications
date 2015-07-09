@@ -47,3 +47,5 @@ gem 'slim-rails'
 gem 'devise'
 gem 'russian'
 gem 'devise-i18n'
+
+gem 'activeadmin', github: 'activeadmin'

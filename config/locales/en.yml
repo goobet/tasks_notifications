@@ -26,6 +26,7 @@ en:
   delete: 'Delete'
   no_found: "No %{name} found"
   tasks_name: 'tasks'
+  task_details: 'Task details'
   logout: 'Logout'
   users:
     profile:
@@ -37,6 +38,9 @@ en:
     tasks:
       mark_as_performed: 'Mark as performed'
   tasks:
+    repeating:
+      none: 'None'
+      every: 'Every'
     new:
       title: 'New Task'
     edit:
@@ -51,4 +55,20 @@ en:
       every_days: 'days'
       every_months: 'months'
       every_years: 'years'
-
+  admin:
+    tasks:
+      index:
+        every_minutes: 'minutes'
+        every_hours: 'hours'
+        every_days: 'days'
+        every_months: 'months'
+        every_years: 'years'
+      form:
+        repeat_count: 'Repeat'
+      repeating_form:
+        title_for_every_fields: 'Every'
+        every_minutes: 'minutes'
+        every_hours: 'hours'
+        every_days: 'days'
+        every_months: 'months'
+        every_years: 'years'
