@@ -2,8 +2,32 @@ div
   = f.label :name, t('.name')
   = f.text_field :name
 div
-  = f.label :name, t('.description')
+  = f.label :description, t('.description')
   = f.text_area :description
 div
-  = f.label :name, t('.start_date')
+  = f.label :start_date, t('.start_date')
   = f.datetime_select :start_date
+div
+  = f.label :repeat_count, t('.repeat_count')
+  = f.number_field :repeat_count, min: 0
+div
+  p = t('.repeat_every')
+  = f.number_field :every_minutes, min: 0
+  = f.label :every_minutes, t('.every_minutes')
+  br
+  
+  = f.number_field :every_hours, min: 0
+  = f.label :every_hours, t('.every_hours')
+  br
+  
+  = f.number_field :every_days, min: 0
+  = f.label :every_days, t('.every_days')
+  br
+  
+  = f.number_field :every_months, min: 0
+  = f.label :every_months, t('.every_months')
+  br
+  
+  = f.number_field :every_years, min: 0
+  = f.label :every_years, t('.every_years')
+  

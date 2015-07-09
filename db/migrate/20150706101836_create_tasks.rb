@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration
       t.text :description, null: false, default: ""
       t.integer :status, null: false, default: 0
       t.datetime :repeat_interval
-      t.integer :repeat_count, null: false, default: 1
+      t.integer :repeat_count, null: false, default: 0
       t.datetime :start_date, null: false
       t.belongs_to :user
 

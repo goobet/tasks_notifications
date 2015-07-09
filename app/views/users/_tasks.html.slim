@@ -2,15 +2,10 @@
   table
     - tasks.each do |task|
       tr
-        td.name 
-          = link_to task.name, task_path(task)
-        td.description = task.description
-        td.start_date = task.start_date
+        td.start_date = task.start_date.strftime('%Y-%m-%d %H:%M')
+        td.name = link_to task.name, task_path(task)
         - unless task.performed?
-          td
-            = form_for task, method: :put do |f|
-              = f.hidden_field :status, value: :performed
-              = f.submit t('.mark_as_performed')
+          td = link_to t('.mark_as_performed'), mark_as_performed_task_path(task) 
           td.edit = link_to t(:edit), edit_task_path(task)
         td.delete = link_to t(:delete), task_path(task), method: :delete
 - else
