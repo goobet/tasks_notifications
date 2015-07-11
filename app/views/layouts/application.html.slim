@@ -6,12 +6,11 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    - if notice
-      div= notice
-
-    - if user_signed_in?
-      = current_user.name
-      | (
-      = link_to t(:logout), destroy_user_session_path, method: :delete
-      | )
-    = yield
+    = render 'shared/navbar'
+    .container
+      = render 'shared/flash'
+      - if yield(:title).present?
+        .page-header
+          .h1
+            = yield :title
+      = yield

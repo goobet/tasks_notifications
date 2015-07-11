@@ -1,21 +1,68 @@
 ru:
+  activerecord:
+    attributes:
+      user:
+        name: 'Имя'
+        email: 'Email'
+        created_at: 'Зарегистрирован'
+        sign_in_count: 'Количество входов'
+        current_sign_in_at: 'Вошел'
+        last_sign_in_at: 'Последний вход'
+        current_password: "Текущий пароль"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        remember_me: "Запомнить меня"
+      task:
+        name: 'Название'
+        created_at: 'Создана'
+        user: 'Пользователь'
+        status: 'Статус'
+        start_date: 'Дата начала'
+        updated_at: 'Обновлена'
+        repeat_count: 'Число повторений'
+        repeating: 'Повторять'
+        description: 'Описание'
+    models:
+      task:
+        one: 'Задача'
+        other: 'Задачи'
+        few: 'Задачи'
+        many: 'Задачи'
+      user:
+        one: Пользователь
+        other: Пользователи
+        few: Пользователи
+        many: Пользователи
+  time:
+    formats:
+      default: "%d %B %Y %H:%M"
+      for_picker: "%F %I:%M %p"
+  appname: 'Tasks notifications'
   update: 'Обновить'
   create: 'Создать'
   edit: 'Изменить'
   delete: 'Удалить'
+  back: 'Назад'
+  cancel: 'Отмена'
   no_found: "%{name} не найдены"
   tasks_name: 'Задачи'
   logout: 'Выйти'
-  users:
-    profile:
+  task_details: 'Задача'
+  mark_as_performed: 'Отметить выполненной'
+  tasks:
+    status: 
+      performed: 'Выполнена'
+      not_performed: 'Не выполнена'
+    index:
       create_new_task: 'Создать новую задачу'
       title: 'Задачи'
       need_perform: 'Пора сделать'
       in_future: 'Запланнированные'
       performed_tasks: 'Выполненные'
-    tasks:
-      mark_as_performed: 'Отметить выполненной'
-  tasks:
+    repeating:
+      none: 'Нет'
+      every: 'каждые'
+      repeat: 'Повторять'
     new:
       title: 'Новая задача'
     edit:
@@ -31,3 +78,23 @@ ru:
       every_days: 'дней'
       every_months: 'месяцев'
       every_years: 'лет'
+  admin:
+    tasks:
+      repeating: 'Повторения'
+  devise:
+    passwords:
+      new:
+        forgot_your_password: "Забыли пароль?"
+        send_me_reset_password_instructions: "Выслать новый пароль"
+    registrations:
+      new:
+        sign_up: "Регистрация"
+    sessions:
+      new:
+        sign_in: "Войти"
+    shared:
+      links:
+        back: "Назад"
+        forgot_your_password: "Забыли пароль?"
+        sign_in: "Войти"
+        sign_up: "Регистрация"

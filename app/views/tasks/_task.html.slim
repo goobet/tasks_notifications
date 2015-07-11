@@ -1,0 +1,9 @@
+tr
+  td.start_date.col-md-2 = l(task.start_date)
+  td.name.col-md-6 = link_to task.name, task_path(task)
+  td.actions.col-md-4
+    .btn-group.pull-right
+      - if task.not_performed?
+        = link_to t(:mark_as_performed), mark_as_performed_task_path(task), class: 'btn btn-sm btn-primary'
+        = link_to t(:edit), edit_task_path(task), class: 'btn btn-sm btn-default'
+      = link_to t(:delete), task_path(task), method: :delete, class: 'btn btn-sm btn-danger'

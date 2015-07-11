@@ -1,0 +1,7 @@
+= content_for :title
+  = t '.title'
+  = link_to t('.create_new_task'), new_task_path(@task), class: 'btn btn-primary pull-right'
+br
+= render 'tasks', tasks: @already_need_perform, table_title: t('.need_perform') if @already_need_perform.any?
+= render 'tasks', tasks: @in_future, table_title: t('.in_future') if @in_future.any?
+= render 'tasks', tasks: @performed_tasks, table_title: t('.performed_tasks') if @performed_tasks.any?

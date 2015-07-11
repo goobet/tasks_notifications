@@ -1,6 +1,12 @@
 class TasksController < ApplicationController
   before_action :set_task, except: [:new, :index, :create]
 
+  def index
+    @already_need_perform = current_user.tasks.already_need_perform.order(start_date: :asc)
+    @in_future = current_user.tasks.in_future.order(start_date: :asc)
+    @performed_tasks = current_user.tasks.where(status: 1).order(start_date: :desc)
+  end
+
   def new
     @task = Task.new(start_date: Time.now + 1.hour)
   end
@@ -10,7 +16,7 @@ class TasksController < ApplicationController
       t.user = current_user
     end
     
-    return redirect_to profile_path
+    redirect_to root_path
   end
 
   def edit
@@ -19,16 +25,12 @@ class TasksController < ApplicationController
   def update
     @task.update(task_params)
     
-    return redirect_to profile_path
+    redirect_to root_path
   end
 
   def destroy
     @task.destroy()
-    redirect_to profile_path
-  end
-
-  def index
-    redirect_to profile_path
+    redirect_to root_path
   end
 
   def mark_as_performed

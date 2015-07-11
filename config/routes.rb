@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
-  root 'users#profile', as: :profile
+  root 'tasks#index'
 
-  resources :tasks do
+  get 'tasks', to: redirect('/'), as: :tasks
+
+  resources :tasks, except: :index do
     member do
       get 'mark_as_performed', as: :mark_as_performed
     end
   end
+
 
   devise_for :users, sign_out_via: [:get, :delete]
 

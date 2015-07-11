@@ -60,7 +60,7 @@ ActiveAdmin.register Task do
         end
       end
       column do
-        inputs I18n.t(:repeating), class: 'task_repeating_params' do
+        inputs I18n.t('admin.tasks.repeating'), class: 'task_repeating_params' do
           input :repeat_count
           render partial: 'repeating_form', locals: {f: f}
         end

@@ -44,6 +44,5 @@ class Task < ActiveRecord::Base
     attributes_as_string = attributes.map { |k,v| "#{v} #{I18n.t(k, scope:'tasks.form')}"}.join(', ')
     "#{I18n.t('tasks.repeating.every')} #{attributes_as_string}"
   end
+
 end
-
-

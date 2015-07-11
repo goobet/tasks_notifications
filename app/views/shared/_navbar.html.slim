@@ -1,0 +1,31 @@
+.navbar.navbar-default role="navigation" 
+  .container
+    .navbar-header
+      - if user_signed_in?
+        button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button" 
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+      = link_to I18n.t('appname'), :root, class: 'navbar-brand'
+    .navbar-collapse.collapse
+      - if user_signed_in?
+        ul.nav.navbar-nav
+          li class=('active' if current_page? controller: 'tasks', action: 'index')
+            = link_to I18n.t(:tasks_name), :root 
+      ul.nav.navbar-nav.navbar-right
+        li.dropdown
+          a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
+            = I18n.locale
+            span.caret
+          ul.dropdown-menu
+            li
+              = link_to :ru, url_for(locale: :ru), turbolinks: false
+            li
+              = link_to :en, url_for(locale: :en), turbolinks: false
+        - if user_signed_in?
+          li
+            p.navbar-text
+              = current_user.name
+              | (
+              = link_to t(:logout), destroy_user_session_path, method: :delete
+              | )

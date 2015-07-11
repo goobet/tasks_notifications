@@ -1,17 +1,17 @@
 li.every
-  .title = t '.title_for_every_fields'
+  .title = "#{t('tasks.repeating.repeat')} #{t('tasks.repeating.every')}"
   = fields_for :task do |task_fields|
     = task_fields.number_field :every_minutes, min: 0
-    = label_tag :every_minutes, t('.every_minutes')
+    = label_tag :every_minutes, t('tasks.form.every_minutes')
 
     = task_fields.number_field :every_hours, min: 0
-    = label_tag :every_hours, t('.every_hours')
+    = label_tag :every_hours, t('tasks.form..every_hours')
 
     = task_fields.number_field :every_days, min: 0
-    = label_tag :every_days, t('.every_days')
+    = label_tag :every_days, t('tasks.form..every_days')
 
     = task_fields.number_field :every_months, min: 0
-    = label_tag :every_months, t('.every_months')
+    = label_tag :every_months, t('tasks.form.every_months')
 
     = task_fields.number_field :every_years, min: 0
-    = label_tag :every_years, t('.every_years')
+    = label_tag :every_years, t('tasks.form.every_years')

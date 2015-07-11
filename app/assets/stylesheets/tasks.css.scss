@@ -1,0 +1,26 @@
+h2.task-title {
+  word-wrap: break-word;
+}
+table.tasks {
+  table-layout:fixed;
+  td.name {
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+form.edit_task, form.new_task {
+  .fields {
+    margin-bottom: 1em;
+  }
+  .repeat-every {
+    input {
+      width: 3em;
+      text-align: center;
+    }   
+    label {
+      font-weight: normal;
+    }
+  }
+}
