@@ -10,7 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= stub active_admin.js.coffee
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery-ui

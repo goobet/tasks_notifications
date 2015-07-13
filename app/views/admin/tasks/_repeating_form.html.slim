@@ -1,0 +1,17 @@
+li.every
+  .title = t '.title_for_every_fields'
+  = fields_for :task do |task_fields|
+    = task_fields.number_field :every_minutes, min: 0
+    = label_tag :every_minutes, t('.every_minutes')
+
+    = task_fields.number_field :every_hours, min: 0
+    = label_tag :every_hours, t('.every_hours')
+
+    = task_fields.number_field :every_days, min: 0
+    = label_tag :every_days, t('.every_days')
+
+    = task_fields.number_field :every_months, min: 0
+    = label_tag :every_months, t('.every_months')
+
+    = task_fields.number_field :every_years, min: 0
+    = label_tag :every_years, t('.every_years')
