@@ -1,33 +1,39 @@
-div
-  = f.label :name, t('.name')
-  = f.text_field :name
-div
-  = f.label :description, t('.description')
-  = f.text_area :description
-div
-  = f.label :start_date, t('.start_date')
-  = f.datetime_select :start_date
-div
-  = f.label :repeat_count, t('.repeat_count')
-  = f.number_field :repeat_count, min: 0
-div
-  p = t('.repeat_every')
-  = f.number_field :every_minutes, min: 0
-  = f.label :every_minutes, t('.every_minutes')
-  br
-  
-  = f.number_field :every_hours, min: 0
-  = f.label :every_hours, t('.every_hours')
-  br
-  
-  = f.number_field :every_days, min: 0
-  = f.label :every_days, t('.every_days')
-  br
-  
-  = f.number_field :every_months, min: 0
-  = f.label :every_months, t('.every_months')
-  br
-  
-  = f.number_field :every_years, min: 0
-  = f.label :every_years, t('.every_years')
-  
+= form_for @task do |f|
+  .fields
+    .form-group
+      = f.label :name, t('.name')
+      = f.text_field :name, class: 'form-control'
+    .form-group
+      = f.label :description, t('.description')
+      = f.text_area :description, class: 'form-control'
+    .row.form-group
+      .col-md-2 = f.label :start_date, t('.start_date')
+      .col-md-3      
+        .datetimepicker.input-group.date
+          = f.text_field :start_date, :class => "form-control datetimepicker", :"data-date-format" => "YYYY-MM-DD hh:mm A", :value => I18n.l(@task.start_date, format: :for_picker), locale: I18n.locale
+          span.input-group-addon
+            span.glyphicon.glyphicon-calendar
+      .row.form-group
+      .col-md-2 = f.label :repeat_count, t('.repeat_count')
+      .col-md-10 = f.number_field :repeat_count, min: 0
+    .row.repeat-every
+      b.col-md-2 = t('.repeat_every')
+      .col-md-10
+        => f.number_field :every_minutes, min: 0
+        => f.label :every_minutes, t('.every_minutes')
+
+        => f.number_field :every_hours, min: 0
+        => f.label :every_hours, t('.every_hours')
+
+        => f.number_field :every_days, min: 0
+        => f.label :every_days, t('.every_days')
+
+        => f.number_field :every_months, min: 0
+        => f.label :every_months, t('.every_months')
+
+        => f.number_field :every_years, min: 0
+        => f.label :every_years, t('.every_years')
+  .text-right
+
+    => f.submit t(current_page?(action: :new) ? 'create' : 'update'), class: 'btn btn-primary'
+    = link_to t('cancel'), :back, class: 'btn btn-default'

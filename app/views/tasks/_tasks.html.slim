@@ -1,0 +1,7 @@
+.panel.panel-default
+  .panel-heading = table_title
+  - unless tasks.empty?
+    table.tasks.table = render partial: 'task', collection: tasks
+  - else
+    .panel-body
+      p = t(:no_found, name: t(:tasks_name))

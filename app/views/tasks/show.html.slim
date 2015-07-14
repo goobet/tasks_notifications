@@ -1,6 +1,22 @@
-h2= @task.name
-p= @task.description
-p= @task.start_date
-=link_to t(:edit), edit_task_path(@task)
-||
-=link_to t(:delete), task_path(@task), method: :delete
+.page-header
+  h2.task-title
+    p = @task.name
+    span.label class=(@task.performed? ? 'label-success' : 'label-default') 
+      = I18n.t(@task.status, scope: 'tasks.status')
+    .pull-right = l @task.start_date
+.container
+  .row
+    p = @task.description
+  - if @task.repeatable?
+    .row
+      p 
+        => t('tasks.repeating.repeat')
+        = @task.repeating.downcase
+  .row
+    - if @task.not_performed?
+      .pull-left 
+        = link_to t(:mark_as_performed), mark_as_performed_task_path(@task), class: 'btn btn-primary'
+    .pull-right
+      => link_to t(:back), :back, class: 'btn btn-default'
+      => link_to t(:edit), edit_task_path(@task), class: 'btn btn-default' if @task.not_performed?
+      = link_to t(:delete), task_path(@task), method: :delete, class: 'btn btn-danger'

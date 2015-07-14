@@ -14,5 +14,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require jquery-ui
+//= require bootstrap-sprockets
+//= stub active_admin.js.coffee
+//= require moment
+//= require bootstrap-datetimepicker
+//= require moment/ru
+//= require_tree .
