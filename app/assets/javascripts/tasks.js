@@ -1,10 +1,18 @@
 function initialize() {
   available_locales = ['en', 'ru'];
-  locale = $('input.datetimepicker').attr('locale');
-  if(locale != 'en' && $.inArray(locale, available_locales) >= 0) {
-    $('.datetimepicker').datetimepicker({locale: locale});
+  picker = $('.datetimepicker input');
+  locale = picker.attr('locale');
+  value = new Date(picker.attr('def_value'));
+
+  if(locale != undefined && locale != 'en' && $.inArray(locale, available_locales) >= 0) {
+    $('.datetimepicker').datetimepicker({
+      locale: locale,
+      defaultDate: value
+    });
   } else {
-    $('.datetimepicker').datetimepicker();
+    $('.datetimepicker').datetimepicker({
+      defaultDate: value
+    });
   }
 }
 

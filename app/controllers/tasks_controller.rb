@@ -12,10 +12,10 @@ class TasksController < ApplicationController
   end
 
   def create
-    Task.create(task_params) do |t|
-      t.user = current_user
-    end
-    
+    task = current_user.tasks.create(task_params)
+
+    task.create_sms_notification if params[:task][:notify_by_sms]
+
     redirect_to root_path
   end
 
@@ -23,6 +23,8 @@ class TasksController < ApplicationController
   end
 
   def update
+    @task.sms_notification.delete unless params[:task][:notify_by_sms]
+
     @task.update(task_params)
     
     redirect_to root_path
@@ -48,5 +50,4 @@ class TasksController < ApplicationController
     params.require(:task).permit(:name, :description, :start_date, :repeat_count, 
       :every_minutes, :every_hours, :every_days, :every_months, :every_years)
   end
-
 end

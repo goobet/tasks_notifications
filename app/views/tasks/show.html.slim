@@ -12,6 +12,9 @@
       p 
         => t('tasks.repeating.repeat')
         = @task.repeating.downcase
+  - if @task.notify_by_sms
+    .row
+      p = t("sms_notifications.statuses.#{@task.sms_notification.status}")
   .row
     - if @task.not_performed?
       .pull-left 

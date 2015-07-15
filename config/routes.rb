@@ -10,9 +10,19 @@ Rails.application.routes.draw do
     end
   end
 
+  scope :sms_notifications do
+    post 'smsru_callback', to: 'sms_notifications#smsru_callback'
+  end
 
   devise_for :users, sign_out_via: [:get, :delete]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  require 'sidekiq/web'
+  authenticated :admin_user do
+    scope "/sidekiq" do
+      mount Sidekiq::Web => '/'
+    end
+  end
 end
