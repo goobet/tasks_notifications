@@ -1,8 +1,9 @@
 en:
   time:
     formats:
-      default: "%F %I:%M %p"
-      for_picker: "%F %I:%M %p"
+      default: "%-d %b %Y %H:%M"
+  datetimepicker:
+    format: 'D MMM YYYY H:mm'
   appname: 'Tasks notifications'
   update: 'Update'
   create: 'Create'
@@ -15,7 +16,16 @@ en:
   logout: 'Logout'
   task_details: 'Task details'
   mark_as_performed: 'Mark as performed'
+  sms_notifications:
+    statuses:
+      need_send: 'Need send sms' 
+      canceled: 'Sms notification canceled' 
+      delivered: 'Sms delivered' 
+      error_on_deliver: 'Error on sending sms'
+      sent: 'Sms delivered'
   tasks:
+    notify_by_sms: 'Notify by sms'
+    sms_delivered: 'Sms delivered'
     status: 
       performed: 'Performed'
       not_performed: 'Not performed'

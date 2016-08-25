@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:sign_up) << [:name, :phone]
   end
 
 
@@ -19,7 +19,6 @@ class ApplicationController < ActionController::Base
     
     if locale.blank? 
       I18n.locale = session[:locale] || I18n.default_locale
-      logger.error("locale blank #{session[locale]}")
       return
     end
 

@@ -10,7 +10,7 @@
       .col-md-2 = f.label :start_date, t('.start_date')
       .col-md-3      
         .datetimepicker.input-group.date
-          = f.text_field :start_date, :class => "form-control datetimepicker", :"data-date-format" => "YYYY-MM-DD hh:mm A", :value => I18n.l(@task.start_date, format: :for_picker), locale: I18n.locale
+          = f.text_field :start_date, :class => "form-control picker", :"data-date-format" => t('datetimepicker.format'), value: '', :def_value => @task.start_date.to_formatted_s(:iso8601), locale: I18n.locale
           span.input-group-addon
             span.glyphicon.glyphicon-calendar
       .row.form-group
@@ -33,6 +33,9 @@
 
         => f.number_field :every_years, min: 0
         => f.label :every_years, t('.every_years')
+    .row
+      b.col-md-2 = f.label :notify_by_sms, t('tasks.notify_by_sms')
+      .col-md-10 = f.check_box :notify_by_sms
   .text-right
 
     => f.submit t(current_page?(action: :new) ? 'create' : 'update'), class: 'btn btn-primary'

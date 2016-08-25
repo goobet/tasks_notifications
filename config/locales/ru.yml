@@ -3,6 +3,7 @@ ru:
     attributes:
       user:
         name: 'Имя'
+        phone: 'Телефон'
         email: 'Email'
         created_at: 'Зарегистрирован'
         sign_in_count: 'Количество входов'
@@ -35,8 +36,9 @@ ru:
         many: Пользователи
   time:
     formats:
-      default: "%d %B %Y %H:%M"
-      for_picker: "%F %I:%M %p"
+      default: "%-d.%m.%Y %H:%M"
+  datetimepicker:
+    format: 'D.MM.YYYY H:mm'
   appname: 'Tasks notifications'
   update: 'Обновить'
   create: 'Создать'
@@ -49,7 +51,16 @@ ru:
   logout: 'Выйти'
   task_details: 'Задача'
   mark_as_performed: 'Отметить выполненной'
+  sms_notifications:
+    statuses:
+      need_send: 'Необходимо отправить sms' 
+      canceled: 'Sms оповещение отменено' 
+      delivered: 'Sms доставлено' 
+      error_on_deliver: 'Ошибка при отправке sms'
+      sent: 'Sms отправлено'
   tasks:
+    notify_by_sms: 'Оповестить по sms'
+    sms_delivered: 'Sms отправлено'
     status: 
       performed: 'Выполнена'
       not_performed: 'Не выполнена'
